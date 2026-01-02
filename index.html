@@ -1,0 +1,112 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESPN Homepage Ad Overlay</title>
+  <link rel="icon" href="/assets/logos/gkb-espn.png" />
+  <link rel="stylesheet" href="/assets/css/espn-replica.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+    header {
+      background: #1d1d1d;
+      color: white;
+      padding: 20px;
+    }
+    header h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+    .main-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
+      background: white;
+      min-height: 1000px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: margin-top 0.4s ease;
+    }
+    .ad-container {
+      width: 1280px;
+      margin: 0 auto;
+      position: relative;
+      height: auto;
+      overflow: hidden;
+      transition: height 0.4s ease;
+    }
+    iframe {
+      border: none;
+      background: transparent;
+      display: block;
+    }
+    #ad-pushdown {
+      width: 1280px;
+      height: 418px;
+    }
+    #ad-leaderboard {
+      width: 1280px;
+      height: 100px;
+      display: none;
+    }
+    #ad-right-rail {
+      position: absolute;
+      top: 420px;
+      right: 20px;
+      width: 300px;
+      height: 250px;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Simulated ESPN Homepage Layout</h1>
+  </header>
+
+  <div class="ad-container" id="adContainer">
+    <iframe id="ad-pushdown" src="/creatives/1280x418.html" scrolling="no"></iframe>
+    <iframe id="ad-leaderboard" src="/creatives/1280x100.html" scrolling="no"></iframe>
+  </div>
+
+  <div class="main-content" id="mainContent">
+    <p>This is a visual shell mimicking the ESPN homepage layout. HTML ads are layered on top below.</p>
+    <p style="color: #666;">Only visual, not functional. For showcase purposes only.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis.</p>
+    <p>Suspendisse potenti. Nulla vitae elit libero, a pharetra augue.</p>
+    <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+    <p>Etiam porta sem malesuada magna mollis euismod. Nulla vitae elit libero.</p>
+  </div>
+
+  <iframe
+    id="ad-right-rail"
+    src="/creatives/300x250.html"
+    scrolling="no"
+  ></iframe>
+
+  <footer style="margin-top: 80px; padding: 40px; text-align: center; font-size: 14px; color: #999;">
+    <div style="margin-bottom: 12px;">
+      <img src="/assets/logos/brandworks.png" alt="Brandworks" style="height: 60px;" />
+    </div>
+    <div>powered by Brandworks + GKB</div>
+  </footer>
+
+  <script>
+    setTimeout(() => {
+      const pushdown = document.getElementById('ad-pushdown');
+      const leaderboard = document.getElementById('ad-leaderboard');
+      const adContainer = document.getElementById('adContainer');
+      const mainContent = document.getElementById('mainContent');
+
+      pushdown.style.display = 'none';
+      leaderboard.style.display = 'block';
+      adContainer.style.height = '100px';
+      mainContent.style.marginTop = '0px';
+    }, 8000);
+  </script>
+</body>
+</html>
